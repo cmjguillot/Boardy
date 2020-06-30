@@ -1,0 +1,9 @@
+<form [formGroup]="addColumn" (ngSubmit)="addColumn()">
+    <div class="form-group">
+        
+      <label>Nom</label>
+      <input type="text" class="form-control" formControlName="nomColumn">
+    </div>
+    
+    <button type="submit" class="submit">OK</button>
+  </form>
