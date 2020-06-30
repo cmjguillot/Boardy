@@ -11,7 +11,7 @@ export class CardToTabService {
 
   addToTab(newCard:CardComponent) {
 
-  this.cardList.put(newCard);
+  this.cardList.push(newCard);
 
 
   }
