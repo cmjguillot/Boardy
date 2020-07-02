@@ -330,11 +330,9 @@
     
   </ul>
 
-  <ul>
-    <li *ngfor="let column of getColumnList()">
+  
+    <app-column *ngfor="let column of columns"></app-column>
 
-    </li>
-  </ul>
 </div>
 
   <!-- Highlight Card -->

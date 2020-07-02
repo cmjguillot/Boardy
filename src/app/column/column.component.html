@@ -1,11 +1,9 @@
 <div class="column">
-    <h1>{{  getNomColumn() }}</h1>
+    <h1>{{  title  }}</h1>
 
-    <ul>
-        <li *ngfor="let card of getCardList()">
-          
-        </li>
-      </ul>
+
+        <app-card *ngfor="let card of getCardList()"></app-card>
+  
 
 
 

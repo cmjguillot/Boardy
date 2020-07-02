@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Column } from './@shared/model/column';
+import { CardToTabService } from './card-to-tab.service';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +9,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Boardy';
+  columns: Column[];
+
+  constructor(
+    private cardToTabService: CardToTabService
+  ) {
+
+  }
 
   ngOnInit(): void {
-   
-
-   
-
-
+    this.columns = this.cardToTabService.getColumnList();
   }
 }
 

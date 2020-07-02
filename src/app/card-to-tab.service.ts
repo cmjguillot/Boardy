@@ -1,25 +1,28 @@
 import { Injectable } from '@angular/core';
 import { CardComponent } from './card/card.component';
 import { ColumnComponent } from './column/column.component';
+import {  Card } from './@shared/model/card';
+import {  Column } from './@shared/model/column';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardToTabService {
-  private cardList :CardComponent [];
-  private columnList :ColumnComponent [];
 
-  constructor() { }
+  private cardList: Card[];
+  private columnList: Column[];
 
-  addToCardList(newCard:CardComponent) {
-
-  this.cardList.push(newCard);
-
-
+  constructor() { 
+    this.cardList = [];
+    this.columnList = [];
   }
 
-  addToColumnList(newColumn:ColumnComponent) {
-    this.columnList.push(newColumn);
+  addToCardList(nom: string, prenom: string) {
+    this.cardList.push({ nom: nom, prenom: prenom });
+  }
+
+  addToColumnList(title: string) {
+    this.columnList.push({ title: title });
   }
 
   getColumnList() {

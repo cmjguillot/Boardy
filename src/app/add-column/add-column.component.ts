@@ -14,22 +14,14 @@ export class AddColumnComponent implements OnInit {
   constructor(private CardToTabService: CardToTabService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.addColumnForm = this.fb.group({  
-
-      nomColumn: ['Nom de votre column'],
-                 
-                        
+    this.addColumnForm = this.fb.group({
+      nomColumn: ['Nom de votre column']
     });
-
   }
 
   addColumn() {
-
-    let newColumn = new ColumnComponent(this.addColumnForm['nomColumn']);
-    this.CardToTabService.addToColumnList(newColumn);
-
-
-
+    let title = this.addColumnForm['nomColumn'];
+    this.CardToTabService.addToColumnList(title);
   }
 
 }

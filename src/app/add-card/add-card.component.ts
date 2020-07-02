@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CardComponent } from '../card/card.component';
 import { CardToTabService } from 'src/app/card-to-tab.service';
+import { ColumnComponent } from '../column/column.component';
 
 
 @Component({
@@ -11,31 +12,26 @@ import { CardToTabService } from 'src/app/card-to-tab.service';
 })
 export class AddCardComponent implements OnInit {
 
-  addCardForm : FormGroup;
- 
-  
+  addCardForm : FormGroup; 
 
-  constructor(private CardToTabService: CardToTabService, private fb: FormBuilder) { }
+  constructor(
+    private CardToTabService: CardToTabService, 
+    private fb: FormBuilder
+    ) {
+   
+   }
 
   ngOnInit(): void {
     this.addCardForm = this.fb.group({  
-
       lastname: ['Votre nom'],
-      firstname: ['Votre prenom'],                  
-                        
+      firstname: ['Votre prenom']
     });
-
-   
-
-
   }
 
   addCard(){
-   
-    let newCard = new CardComponent(this.addCardForm['lastname'],this.addCardForm['firstname'] );
-      
-      
-    this.CardToTabService.addToCardList(newCard);
+    let prenom = this.addCardForm['firstname'];
+    let nom = this.addCardForm['lastname'];      
+    this.CardToTabService.addToCardList(prenom, nom);
   }
 
 }
