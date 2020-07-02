@@ -35,7 +35,7 @@ export class AddCardComponent implements OnInit {
     let newCard = new CardComponent(this.addCardForm['lastname'],this.addCardForm['firstname'] );
       
       
-    this.CardToTabService.addToTab(newCard);
+    this.CardToTabService.addToCardList(newCard);
   }
 
 }

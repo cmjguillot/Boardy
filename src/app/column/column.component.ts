@@ -21,7 +21,13 @@ export class ColumnComponent implements OnInit {
      this.listCard.push(newCard);
    }
 
+   getNomColumn() {
+    return  this.nomColumn;
+  }
+
   ngOnInit(): void {
   }
+
+  
 
 }

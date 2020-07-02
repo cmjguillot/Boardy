@@ -19,6 +19,13 @@ export class CardComponent implements OnInit {
 
    }
 
+   getLastName() {
+     return this.lastname;
+   }
+   getFirstName() {
+    return this.firstname;
+  }
+
   ngOnInit(): void {
 
   }

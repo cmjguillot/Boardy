@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ColumnComponent } from '../column/column.component';
+import { CardToTabService } from 'src/app/card-to-tab.service';
 
 @Component({
   selector: 'app-add-column',
@@ -10,7 +11,7 @@ import { ColumnComponent } from '../column/column.component';
 export class AddColumnComponent implements OnInit {
   addColumnForm : FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private CardToTabService: CardToTabService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.addColumnForm = this.fb.group({  
@@ -25,6 +26,9 @@ export class AddColumnComponent implements OnInit {
   addColumn() {
 
     let newColumn = new ColumnComponent(this.addColumnForm['nomColumn']);
+    this.CardToTabService.addToColumnList(newColumn);
+
+
 
   }
 
