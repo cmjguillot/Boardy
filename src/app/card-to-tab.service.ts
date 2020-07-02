@@ -22,5 +22,9 @@ export class CardToTabService {
     this.columnList.push(newColumn);
   }
 
+  getColumnList() {
+    return this.columnList;
+  }
+
   
 }

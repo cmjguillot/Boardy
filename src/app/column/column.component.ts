@@ -8,8 +8,10 @@ import { CardComponent } from '../card/card.component';
 })
 export class ColumnComponent implements OnInit {
 
+   
   private nomColumn: String;
   private listCard : CardComponent[];
+  
 
   constructor( nomC:String) {
  
@@ -23,6 +25,10 @@ export class ColumnComponent implements OnInit {
 
    getNomColumn() {
     return  this.nomColumn;
+  }
+
+  getCardList(){
+    return this.listCard;
   }
 
   ngOnInit(): void {
